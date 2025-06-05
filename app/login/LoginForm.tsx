@@ -17,6 +17,9 @@ function LoginForm() {
     const serverUrl = process.env.NEXT_PUBLIC_API_SERVER_URL;
 
     try {
+        if (!serverUrl) {
+          throw new Error("API server URL is not defined");
+        }
       const res = await fetch(`${serverUrl}/auth/login`, {
         method: "POST",
         headers: {

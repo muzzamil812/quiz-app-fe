@@ -10,7 +10,10 @@ type StacksResponse = {
 }[];
 
 async function Stacks() {
-  const url = process.env.NEXT_PUBLIC_API_SERVER_URL + "/stacks/all"
+  const url = process.env.NEXT_PUBLIC_API_SERVER_URL + "/stacks/all";
+  if (!url) {
+    throw new Error("API server URL is not defined");
+  }
   const response = await fetch(url, {
     method: "GET",
     headers: {

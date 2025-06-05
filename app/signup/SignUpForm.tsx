@@ -25,6 +25,9 @@ function SignUpForm() {
     const serverUrl = process.env.NEXT_PUBLIC_API_SERVER_URL;
 
     try {
+        if (!serverUrl) {
+          throw new Error("API server URL is not defined");
+        }
       const response = await fetch(`${serverUrl}/auth/signup`, {
         method: "POST",
         headers: {
