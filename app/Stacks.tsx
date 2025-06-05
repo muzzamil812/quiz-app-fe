@@ -11,6 +11,7 @@ type StacksResponse = {
 
 async function Stacks() {
   const url = process.env.API_SERVER_URL + "/stacks/all";
+  console.log(url,'here');
   if (!url) {
     throw new Error("API server URL is not defined");
   }
