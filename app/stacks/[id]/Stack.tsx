@@ -16,7 +16,7 @@ type StackData = {
 
 async function Stack({ params }: Props) {
   const { id } = await params;
-  const url = process.env.NEXT_PUBLIC_API_SERVER_URL + "/stacks/getStackByID/" + id;
+  const url = process.env.API_SERVER_URL + "/stacks/getStackByID/" + id;
   if (!url) {
     throw new Error("API server URL is not defined");
   }
