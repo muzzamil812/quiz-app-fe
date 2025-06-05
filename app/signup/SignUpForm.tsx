@@ -42,7 +42,7 @@ function SignUpForm() {
         throw new Error(errData.message || "Signup failed");
       }
 
-      const result = await response.json();
+      await response.json();
       setSuccess("Signup successful!");
       form.reset(); // Reset form fields
     } catch (err: any) {
